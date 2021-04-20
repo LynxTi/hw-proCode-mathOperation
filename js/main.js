@@ -29,14 +29,14 @@ const mathOperation = (firstNum, secondNum, symbol) => {
             return firstNum / secondNum;
         case 'squaring':
             return Math.pow(firstNum, secondNum);
-        // case 'square':
-        //     return
+        case 'square':
+            return Math.pow(firstNum, 1 / secondNum) // Так себе выход из ситуации
     }
 }
 
 const showRezalt = (rezalt, numberAfterComa)=>{
-    if (numberAfterComa === 0) {
-        numberAfterComa = 10;
+    if (numberAfterComa < 0 || numberAfterComa > 20 ) {
+        numberAfterComa = 0;
     }
 
     rezaltBlock.innerHTML = rezalt.toFixed(numberAfterComa)
